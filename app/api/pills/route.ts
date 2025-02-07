@@ -42,3 +42,24 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
     }
 }
+
+export async function GET(req: NextRequest) {
+    try {
+        await dbConnect(); // Connect to the database
+
+        const profile = await currentProfile(); // Get the current user profile
+        if (!profile) {
+            return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+        }
+
+        // Fetch medicines based on the user's ID
+        const medicines = await Medicine.find({ userId: profile.id })
+            .select("name type treatment") // Select only necessary fields
+            .lean(); // Convert Mongoose documents to plain JavaScript objects
+
+        return NextResponse.json(medicines, { status: 200 });
+    } catch (error) {
+        console.error("[MEDICINES_GET_ERROR]", error);
+        return NextResponse.json({ error: "Internal Server Error" }, { status: 500 });
+    }
+}

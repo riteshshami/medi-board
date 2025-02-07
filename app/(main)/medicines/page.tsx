@@ -1,4 +1,5 @@
 import AddMedicineModal  from "@/components/common/add-medicine-modal";
+import Medilist from "@/components/common/medi-list";
 
 export default function Page() {
   return (
@@ -7,6 +8,9 @@ export default function Page() {
         <h1 className="font-bold text-2xl">Medicines Listed</h1>
         <AddMedicineModal />
       </header>
+      <div className="w-full max-w-4xl items-center">
+        <Medilist/>
+      </div>
     </main>
   )
 }
