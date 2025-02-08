@@ -5,22 +5,21 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Button } from "@/components/ui/button"
 import Medicine from '../forms/medicine-form';
 
-const AddMedicineModal  = () => {
+const AddMedicineModal = () => {
     const [isOpen, setIsOpen] = useState(false)
-  return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
-        <Button>Add Medicine</Button>
-        </DialogTrigger>
-        <DialogContent>
-        <DialogHeader>
-            <DialogTitle>Add New Medicine</DialogTitle>
-        </DialogHeader>
-            {/* Add form fields here */}
-            <Medicine/>
-        </DialogContent>
-    </Dialog>
-  )
+    return (
+        <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            <DialogTrigger asChild>
+                <Button>Add Medicine</Button>
+            </DialogTrigger>
+            <DialogContent>
+                <DialogHeader>
+                    <DialogTitle>Add New Medicine</DialogTitle>
+                </DialogHeader>
+                <Medicine />
+            </DialogContent>
+        </Dialog>
+    )
 }
 
 export default AddMedicineModal
