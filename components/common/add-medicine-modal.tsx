@@ -16,7 +16,7 @@ const AddMedicineModal = () => {
                 <DialogHeader>
                     <DialogTitle>Add New Medicine</DialogTitle>
                 </DialogHeader>
-                <Medicine />
+                <Medicine edit={false}  />
             </DialogContent>
         </Dialog>
     )

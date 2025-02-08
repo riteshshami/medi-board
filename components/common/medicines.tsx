@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Table,
     TableBody,
@@ -6,7 +6,10 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
+} from "@/components/ui/table";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import Medicine from "../forms/medicine-form";
+
 
 interface Medicine {
     _id: string;
@@ -20,6 +23,8 @@ interface MedicineProps {
 }
 
 const Medicines: React.FC<MedicineProps> = ({ medicines }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
         <div className="p-4">
             <h4 className="mb-4 text-sm font-medium leading-none">Medicines</h4>
@@ -34,11 +39,21 @@ const Medicines: React.FC<MedicineProps> = ({ medicines }) => {
                 <TableBody>
                     {medicines.map((medicine, index) => (
                         <React.Fragment key={medicine?._id}>
-                            <TableRow>
-                                <TableCell className="font-medium">{medicine?.type}</TableCell>
-                                <TableCell>{medicine?.name}</TableCell>
-                                <TableCell className="text-right">{medicine?.treatment}</TableCell>
-                            </TableRow>
+                            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                                <DialogTrigger asChild>
+                                    <TableRow>
+                                        <TableCell className="font-medium">{medicine?.type}</TableCell>
+                                        <TableCell>{medicine?.name}</TableCell>
+                                        <TableCell className="text-right">{medicine?.treatment}</TableCell>
+                                    </TableRow>
+                                </DialogTrigger>
+                                <DialogContent>
+                                    <DialogHeader>
+                                        <DialogTitle>Edit</DialogTitle>
+                                    </DialogHeader>
+                                    <Medicine edit={true} medicineId={medicine?._id} type={medicine?.type} name={medicine?.name} treatment={medicine?.treatment} />
+                                </DialogContent>
+                            </Dialog>
                         </React.Fragment>
                     ))}
                 </TableBody>
