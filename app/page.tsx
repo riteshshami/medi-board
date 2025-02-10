@@ -11,9 +11,9 @@ export default function Home() {
   return (
     <div>
         <Hero/>
-        <Feedback/>
         <CTASection/>
         <KeyFeatures/>
+        <Feedback/>
         <FAQ/>
     </div>
   );

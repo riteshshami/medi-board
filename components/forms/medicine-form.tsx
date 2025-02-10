@@ -167,7 +167,7 @@ const Medicine: React.FC<EditProps> = ({ edit, medicineId, type, name, treatment
               {isLoading ? "Processing..." : edit ? "Update" : "Submit"}
             </Button>
             {edit && (
-              <Button type="button" variant="destructive" onClick={deleteMedicine} disabled={isLoading}>
+              <Button type="button" variant="destructive" onClick={deleteMedicine} disabled={isLoading} className="bg-[#CC8B65] text-[#E3DCD2]">
                 Delete
               </Button>
             )}
