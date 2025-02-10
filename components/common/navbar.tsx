@@ -1,10 +1,9 @@
 "use client"
 
-import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs"
-import { ModeToggle } from "./theme-button"
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs"
+// import { ModeToggle } from "../theme-button"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { UserDropDown } from "./user-dropdown"
 import { Pill } from "lucide-react"
 
 export default function Navbar() {
@@ -18,8 +17,19 @@ export default function Navbar() {
                             <span className="sr-only">Mediboard</span>
                         </Link>
                     </div>
+                    <div className="flex flex-row justify-between gap-8">
+                        <Link href="/">
+                            <p>Home</p>
+                        </Link>
+                        <Link href="/medicines">
+                            <p>Dashboard</p>
+                        </Link>
+                        <Link href="/">
+                            <p>About Us</p>
+                        </Link>
+                    </div>
                     <div className="flex items-center space-x-4">
-                        <ModeToggle />
+                        {/* <ModeToggle /> */}
                         <SignedOut>
                             <SignInButton mode="modal">
                                 <Button variant="outline" size="sm">
@@ -28,7 +38,13 @@ export default function Navbar() {
                             </SignInButton>
                         </SignedOut>
                         <SignedIn>
-                            <UserDropDown />
+                            <UserButton
+                                appearance={{
+                                    elements: {
+                                        avatarBox: "w-10 h-10",
+                                    },
+                                }}
+                            />
                         </SignedIn>
                     </div>
                 </div>
