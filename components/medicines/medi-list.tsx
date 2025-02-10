@@ -34,9 +34,15 @@ const Medilist = () => {
     }
 
     return (
-        <ScrollArea className="h-[60vh] w-full rounded-md border">
+        <ScrollArea className="h-[60vh] w-full rounded-md border-2">
             {
-                medicines.length === 0 ? ("No Record Found") : (<Medicines medicines={medicines} />)
+                medicines.length === 0 ? (
+                    <div className="flex flex-col justify-center items-center">
+                        <p className="text-2xl px-4 py-2 font-extrabold"> NO RECORD FOUND </p>
+                    </div>
+                ): (
+                        <Medicines medicines = { medicines } />
+            )
             }
         </ScrollArea>
     )
