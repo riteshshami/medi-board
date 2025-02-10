@@ -22,7 +22,7 @@ import { useRouter } from "next/navigation";
 // Validation Schema
 const formSchema = z.object({
   type: z.string().min(1, { message: "Type of disease is required" }),
-  name: z.string().min(1, { message: "Name of medicine is required." }),
+  name: z.string().min(1, { message: "Name of disease is required." }),
   treatment: z.string().min(1, { message: "Minimum one step is required." }),
 });
 
