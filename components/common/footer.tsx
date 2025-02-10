@@ -1,7 +1,7 @@
 
 const Footer = () => {
     return (
-        <div className="flex flex-row justify-between px-4 py-2 border-t-2">
+        <div className="flex flex-row justify-between px-4 py-2 border-t-2 text-black">
             <p className="text-xs font-extralight text-gray-300">
                 Copyright &copy; 2025 Mediboard. All rights reserved.
             </p>
