@@ -1,4 +1,6 @@
-import AddMedicineModal from "@/components/common/add-medicine-modal";
+import dynamic from "next/dynamic";
+
+const AddMedicineModal =  dynamic(() => import("@/components/common/add-medicine-modal"));
 import Medilist from "@/components/medicines/medi-list";
 
 export default function Page() {

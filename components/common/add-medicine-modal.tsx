@@ -1,9 +1,11 @@
 "use client";
 
+import dynamic from 'next/dynamic';
+
 import React, { useState } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
-import Medicine from '../forms/medicine-form';
+const Medicine = dynamic(() => import('../forms/medicine-form'));
 
 const AddMedicineModal = () => {
     const [isOpen, setIsOpen] = useState(false)
