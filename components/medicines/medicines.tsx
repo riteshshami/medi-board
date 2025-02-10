@@ -37,7 +37,7 @@ const Medicines: React.FC<MedicineProps> = ({ medicines }) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {medicines.map((medicine, index) => (
+                    {medicines.map((medicine) => (
                         <React.Fragment key={medicine?._id}>
                             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                                 <DialogTrigger asChild>

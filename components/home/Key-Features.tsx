@@ -1,4 +1,4 @@
-import { ClipboardList, Search, Clock, Shield, BellRing, BarChart3 } from "lucide-react"
+import { ClipboardList, Search, Shield } from "lucide-react"
 
 export default function KeyFeatures() {
   const features = [
