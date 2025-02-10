@@ -81,7 +81,7 @@ const Medicine: React.FC<EditProps> = ({ edit, medicineId, type, name, treatment
       setIsLoading(true);
 
       if (edit && medicineId) {
-        await axios.put(`/api/pills?id=${medicineId}`, values);
+        await axios.put(`/api/single-pill?id=${medicineId}`, values);
       } else {
         await axios.post("/api/pills", values);
       }
@@ -100,12 +100,10 @@ const Medicine: React.FC<EditProps> = ({ edit, medicineId, type, name, treatment
   const deleteMedicine = async () => {
     if (!medicineId) return;
 
-    const confirmed = window.confirm("Are you sure you want to delete this medicine?");
-    if (!confirmed) return;
-
     try {
       setIsLoading(true);
-      await axios.delete(`/api/pills?id=${medicineId}`);
+      console.log("Going for delete")
+      await axios.delete(`/api/single-pill?id=${medicineId}`);
 
       router.refresh();
       window.location.reload();
