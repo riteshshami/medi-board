@@ -10,7 +10,7 @@ export default function CTASection() {
           Join the Future of Healthcare Management
         </h2>
         <p className="text-xl mb-8 max-w-2xl mx-auto">
-          Streamline your practice, enhance patient care, and reclaim your time with Mediboard's innovative platform.
+          Streamline your practice, enhance patient care, and reclaim your time with Mediboard&apos;s innovative platform.
         </p>
         <Button
           size="lg"
