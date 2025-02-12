@@ -41,7 +41,7 @@ const Medicines: React.FC<MedicineProps> = ({ medicines }) => {
                         <React.Fragment key={medicine?._id}>
                             <Dialog open={isOpen} onOpenChange={setIsOpen}>
                                 <DialogTrigger asChild>
-                                    <TableRow>
+                                    <TableRow className="hover:cursor-pointer">
                                         <TableCell className="font-medium">{medicine?.type}</TableCell>
                                         <TableCell>{medicine?.name}</TableCell>
                                         <TableCell className="text-right">{medicine?.treatment}</TableCell>
