@@ -13,7 +13,7 @@ const AddMedicineModal = () => {
     return (
         <Dialog open={isOpen} onOpenChange={setIsOpen}>
             <DialogTrigger asChild>
-                <Button>Add Medicine</Button>
+                <Button className='hover:text-black'>Add Medicine</Button>
             </DialogTrigger>
             <DialogContent>
                 <DialogHeader>

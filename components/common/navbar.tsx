@@ -32,7 +32,7 @@ export default function Navbar() {
                         {/* <ModeToggle /> */}
                         <SignedOut>
                             <SignInButton mode="modal">
-                                <Button variant="outline" size="sm">
+                                <Button variant="outline" size="sm" className='hover:text-black'>
                                     Sign in
                                 </Button>
                             </SignInButton>

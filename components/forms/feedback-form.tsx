@@ -105,7 +105,7 @@ const FeedbackForm = () => {
             )}
           />
           <div className="flex justify-between items-center space-x-4">
-            <Button type="submit" disabled={isLoading}>
+            <Button type="submit" disabled={isLoading} className='hover:text-black'>
               {isLoading ? "Processing..." : "Submit"}
             </Button>
           </div>
