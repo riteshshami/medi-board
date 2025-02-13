@@ -2,7 +2,7 @@ import { SignUp } from "@clerk/nextjs";
 
 export default function Page() {
     return (
-        <div className="w-full h-auto flex items-center justify-center">
+        <div className="flex items-center justify-center" style={{ minHeight: "calc(100vh - 200px)" }}>
             <SignUp />
         </div>
     )
